@@ -1,9 +1,3 @@
-$(document).ready(function() {
-    $("#open").click(function() {
-        $("#logo-nav").fadeIn(4500);
-    });
-});
-
 function openNav() {
     setTimeout(function() {
         document.getElementById("open").style.display = "none";
