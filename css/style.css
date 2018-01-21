@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: url("../img/beauty-girl.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+@media screen and (min-width: 640px) and (max-width: 749px) {
+    .fa {
+        font-size: 50px;
+    }
+
+    .open {
+        float: left;
+        margin: 1em 0 0 1em;
+        display: block;
+    }
+
+    .nav {
+        width: 0;
+        height: 100vh;
+        z-index: 1;
+        position: fixed;
+        background-image: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.3) 0%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0.5) 60%,
+            rgba(255, 255, 255, 1) 80%,
+            rgba(255, 255, 255, 1) 100%
+        );
+        transition: all 0.5s ease-in;
+        border-right: none;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 80vh 20vh;
+        overflow: hidden;
+    }
+
+    .box-1 {
+        grid-column: auto;
+        grid-row: 1/2;
+    }
+
+    .box-2 {
+        grid-column: auto;
+        grid-row: 2/3;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav a:first-child {
+        color: black;
+        display: block;
+        padding-bottom: 1em;
+        margin: 37px 0 0 52px;
+    }
+
+    .nav a:not(:first-child) {
+        clear: left;
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 35px;
+        display: block;
+        text-decoration: none;
+        padding: 0.9em 0;
+        margin-left: 52px;
+        font-family: 'Quattrocento Sans', sans-serif;
+    }
+
+    .nav a:nth-child(2) {
+        font-weight: 900;
+        color: rgb(215, 126, 130);
+    }
+
+    #logo-nav {
+        height: 250px;
+        width: 250px;
+        display: none;
+    }
+
+    .close {
+        float: left;
+        font-size: 60px;
+        margin: 0 0 0 1em;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    }
+}
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Quattrocento+Sans" rel="stylesheet">
+
+    <!-- CSS3 links -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!-- jQuery and AJAX -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <title>Beauty Factory Eastbourne</title>
+</head>
+
+<body>
+
+<div class="nav" id="nav">
+    <div class="box-1">
+        <a href="javascript:void(0)" class="close" onclick="closeNav()">
+            <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+        </a>
+        <a href="#">HOME</a>
+        <a href="#">ABOUT</a>
+        <a href="#">FACILITIES</a>
+        <a href="#">TREATMENTS</a>
+        <a href="#">CONTACT</a>
+    </div>
+    <div class="box-2">
+        <img id="logo-nav" src="img/Logo-Beauty-Factory-Transparent-Small.png">
+    </div>
+</div>
+<i class="fa fa-bars open" id="open" aria-hidden="true" onclick="openNav()"></i>
+
+
+<script>
+    $(document).ready(function() {
+        $("#open").click(function() {
+            $("#logo-nav").fadeIn(4500);
+        });
+    });
+</script>
+
+
+
+
+
+
+<!-- JavaScript -->
+<script src="js/navigation.js"></script>
+
+</body>
+</html>
