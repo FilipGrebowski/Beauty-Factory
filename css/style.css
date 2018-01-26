@@ -1,24 +1,34 @@
 body {
     margin: 0;
     padding: 0;
-    width: 100%;
-    background: url("../img/beauty-girl.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
 }
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px)
+    and (orientation: portrait) {
 
-@media screen and (min-width: 640px) and (max-width: 749px) {
+    .welcome-page {
+        height: 100vh;
+        background: url("../img/beauty-girl.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .about {
+        height: 100vh;
+        background-color: orange;
+    }
+
     .fa {
-        font-size: 50px;
+        font-size: 30px;
     }
 
     .open {
         float: left;
         margin: 1em 0 0 1em;
         display: block;
+        position: fixed;
     }
 
     .nav {
@@ -38,7 +48,7 @@ body {
         border-right: none;
         display: grid;
         grid-template-columns: auto;
-        grid-template-rows: 80vh 20vh;
+        grid-template-rows: 70vh 30vh;
         overflow: hidden;
     }
 
@@ -59,36 +69,37 @@ body {
         color: black;
         display: block;
         padding-bottom: 1em;
-        margin: 37px 0 0 52px;
+        margin: 30px 0 0 30px;
     }
 
     .nav a:not(:first-child) {
         clear: left;
         color: rgba(0, 0, 0, 0.7);
-        font-size: 35px;
+        font-size: 18px;
         display: block;
         text-decoration: none;
         padding: 0.9em 0;
-        margin-left: 52px;
+        margin-left: 30px;
         font-family: 'Quattrocento Sans', sans-serif;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     }
 
-    .nav a:nth-child(2) {
+    /* Changes colour of current option */
+    .nav a.selected {
         font-weight: 900;
         color: rgb(215, 126, 130);
     }
 
     #logo-nav {
-        height: 250px;
-        width: 250px;
+        opacity: 0;
+        height: 150px;
+        width: 150px;
         display: none;
     }
 
     .close {
         float: left;
-        font-size: 60px;
         margin: 0 0 0 1em;
-        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     }
 }
 

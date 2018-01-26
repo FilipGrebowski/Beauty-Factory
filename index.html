@@ -4,7 +4,7 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
@@ -18,44 +18,76 @@
     <!-- jQuery and AJAX -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <!-- JavaScript -->
+    <script src="js/navigation.js"></script>
+
     <title>Beauty Factory Eastbourne</title>
 </head>
 
 <body>
 
+<i class="fa fa-bars open" id="open" aria-hidden="true" onclick="openNav()"></i>
 <div class="nav" id="nav">
     <div class="box-1">
         <a href="javascript:void(0)" class="close" onclick="closeNav()">
             <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
         </a>
-        <a href="#">HOME</a>
-        <a href="#">ABOUT</a>
-        <a href="#">FACILITIES</a>
-        <a href="#">TREATMENTS</a>
-        <a href="#">CONTACT</a>
+        <a href="#welcome-page" id="option">HOME</a>
+        <a href="#about" id="option">ABOUT</a>
+        <a href="#" id="option">FACILITIES</a>
+        <a href="#" id="option">TREATMENTS</a>
+        <a href="#" id="option">CONTACT</a>
     </div>
     <div class="box-2">
         <img id="logo-nav" src="img/Logo-Beauty-Factory-Transparent-Small.png">
     </div>
 </div>
-<i class="fa fa-bars open" id="open" aria-hidden="true" onclick="openNav()"></i>
+
+<section class="welcome-page" id="welcome-page"></section>
+
+<section class="about" id="about"></section>
 
 
 <script>
+
     $(document).ready(function() {
-        $("#open").click(function() {
-            $("#logo-nav").fadeIn(4500);
+
+        // Opening and closing navigation, and changing
+        // appearance of current anchor tag.
+
+        $(".open").click(function() {
+            $("#logo-nav").delay(500).animate({"opacity": "1"}, 1000);
+        });
+
+        $(".close").click(function() {
+            $("#logo-nav").animate({"opacity": "0"}, 100);
+        });
+
+        $("a:nth-child(2)").addClass("selected");
+        $("a#option").click(function() {
+            $("a#option").removeClass("selected");
+            $(this).addClass("selected");
+        });
+
+        // Smooth scrolling.
+
+        var $root = $("html, body");
+
+        $('a[href^="#"]').click(function() {
+            var href = $.attr(this, "href");
+            closeNav();
+            setTimeout(function() {
+                $root.animate({
+                    scrollTop: $(href).offset().top
+                }, 1000, function() {
+                    window.location.hash = href;
+                });
+            }, 500);
+            return false;
         });
     });
+
 </script>
-
-
-
-
-
-
-<!-- JavaScript -->
-<script src="js/navigation.js"></script>
 
 </body>
 </html>
