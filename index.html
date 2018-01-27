@@ -4,7 +4,7 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
@@ -32,11 +32,11 @@
         <a href="javascript:void(0)" class="close" onclick="closeNav()">
             <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
         </a>
-        <a href="#welcome-page" id="option">HOME</a>
-        <a href="#about" id="option">ABOUT</a>
-        <a href="#" id="option">FACILITIES</a>
-        <a href="#" id="option">TREATMENTS</a>
-        <a href="#" id="option">CONTACT</a>
+        <a href="#welcome-page">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#facilities">FACILITIES</a>
+        <a href="#treatments">TREATMENTS</a>
+        <a href="#contact">CONTACT</a>
     </div>
     <div class="box-2">
         <img id="logo-nav" src="img/Logo-Beauty-Factory-Transparent-Small.png">
@@ -44,13 +44,19 @@
 </div>
 
 <section class="welcome-page" id="welcome-page"></section>
-
 <section class="about" id="about"></section>
+<section class="facilities" id="facilities"></section>
+<section class="treatments" id="treatments"></section>
+<section class="contact" id="contact"></section>
+
+
 
 
 <script>
 
     $(document).ready(function() {
+
+        // TODO: Make background image cover whole mobile screen.
 
         // Opening and closing navigation, and changing
         // appearance of current anchor tag.
@@ -64,8 +70,8 @@
         });
 
         $("a:nth-child(2)").addClass("selected");
-        $("a#option").click(function() {
-            $("a#option").removeClass("selected");
+        $(".box-1 a:not(:first-child)").click(function() {
+            $(".box-1 a").removeClass("selected");
             $(this).addClass("selected");
         });
 
@@ -76,6 +82,7 @@
         $('a[href^="#"]').click(function() {
             var href = $.attr(this, "href");
             closeNav();
+            $("#logo-nav").css({"opacity": "0"});
             setTimeout(function() {
                 $root.animate({
                     scrollTop: $(href).offset().top

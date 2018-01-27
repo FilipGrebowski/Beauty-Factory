@@ -3,21 +3,39 @@ body {
     padding: 0;
 }
 
+html {
+    background: url("../img/beauty-girl.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px)
     and (orientation: portrait) {
 
-    .welcome-page {
+    section {
         height: 100vh;
-        background: url("../img/beauty-girl.jpg") no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+    }
+
+    .welcome-page {
+
     }
 
     .about {
-        height: 100vh;
+        background-color: white;
+    }
+
+    .facilities {
         background-color: orange;
+    }
+
+    .treatments {
+        background-color: mediumpurple;
+    }
+
+    .contact {
+        background-color: rebeccapurple;
     }
 
     .fa {
@@ -29,6 +47,7 @@ body {
         margin: 1em 0 0 1em;
         display: block;
         position: fixed;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     }
 
     .nav {
@@ -70,6 +89,7 @@ body {
         display: block;
         padding-bottom: 1em;
         margin: 30px 0 0 30px;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     }
 
     .nav a:not(:first-child) {
